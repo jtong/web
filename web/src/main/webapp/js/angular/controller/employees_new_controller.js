@@ -5,7 +5,7 @@ angular.module('userManagement')
         $scope.create = function(){
             var localUser = new User($scope.user);
             localUser.$save().then(function(result){
-                $location.path("/user");
+                $location.path("/employee");
             });
 
         }

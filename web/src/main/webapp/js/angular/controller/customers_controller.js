@@ -51,7 +51,7 @@ angular.module('userManagement')
         }
 
         $scope.go_to_create_customer = function(){
-            $location.path("/new");
+            $location.path("/customer/new");
         }
 
     });

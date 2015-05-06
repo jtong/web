@@ -15,7 +15,7 @@
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">管理界面</a>
+            <a class="navbar-brand"  href="javascript:void(0)">管理界面</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
