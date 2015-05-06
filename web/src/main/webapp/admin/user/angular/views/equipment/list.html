@@ -1,0 +1,62 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">管理界面</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">器材管理</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group input-group ">
+        <button type="button" class="btn btn-primary btn " ng-click="go_to_create_equipment()">添加器材</button>
+        <button type="button" class="btn btn-default btn "  ng-click="delete_all_selected_equipments()">批量删除</button>
+    </div>
+    <div class="form-group input-group ">
+        <input type="search" class="form-control" />
+        <span class="input-group-btn ">
+            <button class="btn btn-default" type="button" >Search</button>
+        </span>
+    </div>
+</div>
+
+<div class="container">
+
+    <table id="equipment-table" class="table table-bordered">
+        <thead>
+        <tr>
+            <th><input type="checkbox" ng-model="selectedAll" ng-change="select_all_or_select_none()"/></th>
+            <th>ID</th>
+            <th>器材名</th>
+            <th>Email</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr class="equipment_line" ng-repeat="equipment in equipments">
+                <td><input type="checkbox" ng-model="equipment.selected"/></td>
+                <td> {{equipment.id}}</td>
+                <td> {{equipment.name}} </td>
+                <td> {{equipment.email}} </td>
+                <td> {{equipment.age}} </td>
+                <td>
+                    <button class="btn" ng-click="deleteUser(equipment.id)">删除 </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
