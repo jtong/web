@@ -35,8 +35,8 @@
             <th><input type="checkbox" ng-model="selectedAll" ng-change="select_all_or_select_none()"/></th>
             <th>ID</th>
             <th>收支名</th>
-            <th>Email</th>
-            <th>年龄</th>
+            <th>价格</th>
+            <th>购买日期</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -45,8 +45,8 @@
                 <td><input type="checkbox" ng-model="account.selected"/></td>
                 <td> {{account.id}}</td>
                 <td> {{account.name}} </td>
-                <td> {{account.email}} </td>
-                <td> {{account.age}} </td>
+                <td> {{account.price}} </td>
+                <td> {{account.paidTime}} </td>
                 <td>
                     <button class="btn" ng-click="deleteUser(account.id)">删除 </button>
                 </td>

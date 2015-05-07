@@ -1,5 +1,5 @@
 angular.module('userManagement')
-    .controller('UsersNewController', function ($scope, $resource, $location) {
+    .controller('EmployeesNewController', function ($scope, $resource, $location) {
         var User = $resource("/web/api/v1/users/");
         $scope.user = {};
         $scope.create = function(){

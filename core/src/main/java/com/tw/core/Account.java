@@ -2,6 +2,7 @@ package com.tw.core;
 
 import javax.persistence.*;
 import java.lang.String;
+import java.sql.Date;
 
 /**
  * Created by twer on 7/16/14.
@@ -21,7 +22,7 @@ public class Account {
     private double price;
 
     @Column(name = "PAID_TIME")
-    private double paidTime;
+    private Date paidTime;
 
     public double getPrice() {
         return price;
@@ -31,11 +32,11 @@ public class Account {
         this.price = price;
     }
 
-    public double getPaidTime() {
+    public Date getPaidTime() {
         return paidTime;
     }
 
-    public void setPaidTime(double paidTime) {
+    public void setPaidTime(Date paidTime) {
         this.paidTime = paidTime;
     }
 
