@@ -24,3 +24,6 @@ insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 1', 1000.00, '2012
 insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 2', 2000.00, '2012-2-29');
 insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 3', 3000.00, '2012-2-29');
 insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 4', 4000.00, '2012-2-29');
+
+insert into USER ( NAME, PASSWORD, EMAIL, AGE, IS_ADMIN) values ('admin', 'password','admin@abc.com', 21, true);
+

@@ -8,6 +8,23 @@
  *
  * Main module of the application.
  */
+var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
+    // Initialize a new promise
+    var deferred = $q.defer();
+    // Make an AJAX call to check if the user is logged in
+    $http.get('/loggedin').success(function (user) {
+        // Authenticated
+        if (user !== '0') {
+            deferred.resolve();
+        // Not Authenticated
+        } else {
+            $rootScope.message = 'You need to log in.';
+            deferred.reject();
+            location.href="/web/";
+        }
+    });
+    return deferred.promise;
+};
 angular
     .module('userManagement', [
         'ngResource',
@@ -18,7 +35,10 @@ angular
         $routeProvider
             .when('/user', {
                 templateUrl: 'views/user/list.html',
-                controller: 'UsersController'
+                controller: 'UsersController',
+                resolve: {
+                    loggedin: checkLoggedin
+                }
             })
             .when('/user/new', {
                 templateUrl: 'views/user/new.html',

@@ -14,10 +14,13 @@ import java.util.List;
 @Service
 public class UserService {
     private UserDAO userDAO;
+    
+    private PasswordService passwordService;
 
     @Autowired
-    public UserService(UserDAO userDAO) {
+    public UserService(UserDAO userDAO, PasswordService passwordService) {
         this.userDAO = userDAO;
+        this.passwordService = passwordService;
     }
 
     @Transactional
@@ -48,6 +51,11 @@ public class UserService {
     @Transactional
     public void deleteUserList(long[] ids) {
         userDAO.deleteUserList(ids);
+    }
+
+
+    public User auth(String userName, String password) {
+        return userDAO.auth(userName, passwordService.encrypt(password));
     }
 
 }

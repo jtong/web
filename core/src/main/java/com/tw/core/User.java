@@ -24,6 +24,9 @@ public class User {
 
     @Column(name = "AGE")
     private int age;
+    
+    @Column(name = "IS_ADMIN")
+    private boolean isAdmin;
 
     public User() {
     }
@@ -66,5 +69,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

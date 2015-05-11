@@ -3,6 +3,7 @@ package com.tw.web.api;
 import com.tw.core.User;
 import com.tw.core.UsersService;
 import com.tw.core.service.PasswordService;
+import com.tw.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -19,11 +21,13 @@ import java.util.List;
 @RequestMapping("/api/v1/users")
 public class UsersController {
     private UsersService usersService;
+    private UserService userService;
     private PasswordService passwordService;
 
     @Autowired
-    public UsersController(UsersService usersService, PasswordService passwordService) {
+    public UsersController(UsersService usersService, UserService userService, PasswordService passwordService) {
         this.usersService = usersService;
+        this.userService = userService;
         this.passwordService = passwordService;
     }
 
@@ -74,5 +78,6 @@ public class UsersController {
     public List<User> search( @RequestParam(value = "keyword") String keyword) {
         return usersService.search(keyword);
     }
+
 
 }
