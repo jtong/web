@@ -53,5 +53,7 @@ angular.module('userManagement')
         $scope.go_to_create_user = function(){
             $location.path("/user/new");
         }
+        
+
 
     });

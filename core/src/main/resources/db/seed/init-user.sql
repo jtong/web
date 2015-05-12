@@ -1,9 +1,9 @@
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Tom', 'password','tom@abc.com', 16);
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Jerry', 'password','jerry@abc.com', 17);
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Red', 'password','red@abc.com', 18);
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Marry', 'password','marry@abc.com', 19);
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('James', 'password','james@abc.com', 20);
-insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Emma', 'password','emma@abc.com', 21);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Tom', 'd41d8cd98f00b204e9800998ecf8427e','tom@abc.com', 16);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Jerry', 'd41d8cd98f00b204e9800998ecf8427e','jerry@abc.com', 17);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Red', 'd41d8cd98f00b204e9800998ecf8427e','red@abc.com', 18);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Marry', 'd41d8cd98f00b204e9800998ecf8427e','marry@abc.com', 19);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('James', 'd41d8cd98f00b204e9800998ecf8427e','james@abc.com', 20);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE) values ('Emma', 'd41d8cd98f00b204e9800998ecf8427e','emma@abc.com', 21);
 
 insert into Employee ( NAME, PHONE, AGE, GRENDER) values ('Adam', '1234567',21, 1);
 insert into Employee ( NAME, PHONE, AGE, GRENDER) values ('Tony', '1234568',22, 0);
@@ -25,5 +25,5 @@ insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 2', 2000.00, '2012
 insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 3', 3000.00, '2012-2-29');
 insert into ACCOUNT ( NAME, PRICE, PAID_TIME) values ('income 4', 4000.00, '2012-2-29');
 
-insert into USER ( NAME, PASSWORD, EMAIL, AGE, IS_ADMIN) values ('admin', 'password','admin@abc.com', 21, true);
+insert into USER ( NAME, PASSWORD, EMAIL, AGE, IS_ADMIN) values ('admin', 'd41d8cd98f00b204e9800998ecf8427e','admin@abc.com', 21, true);
 

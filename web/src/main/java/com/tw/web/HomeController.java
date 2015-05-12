@@ -39,13 +39,26 @@ public class HomeController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public ModelAndView login(HttpSession session, @RequestParam(value = "user_name") String userName, @RequestParam(value = "password") String password) {
         User current = this.userService.auth(userName, password);
-        return (current == null) ? login(session, current) : new ModelAndView("redirect:/");
+        return (current != null) ? login(session, current) : new ModelAndView("redirect:/");
     }
 
+
+    @RequestMapping(value = "/logedin",method = RequestMethod.GET)
+    public ResponseEntity<User> logedin(HttpSession session) {
+        User current = (User) session.getAttribute("currentUser");
+        return new ResponseEntity<User>(current, HttpStatus.OK);
+    }
 
 
     private ModelAndView login(HttpSession session, User current) {
         session.setAttribute("currentUser", current);
         return new ModelAndView("redirect:/index");
+    }
+
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public void logout(HttpSession session) {
+        session.removeAttribute("currentUser");
+        
     }
 }

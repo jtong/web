@@ -8,23 +8,19 @@
  *
  * Main module of the application.
  */
-var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
-    // Initialize a new promise
-    var deferred = $q.defer();
-    // Make an AJAX call to check if the user is logged in
-    $http.get('/loggedin').success(function (user) {
-        // Authenticated
-        if (user !== '0') {
-            deferred.resolve();
-        // Not Authenticated
-        } else {
-            $rootScope.message = 'You need to log in.';
-            deferred.reject();
-            location.href="/web/";
-        }
-    });
-    return deferred.promise;
-};
+function checkLogin(){
+    $(document).ready(function(){
+        $.get("/web/logedin").then(function(user){
+            if(user == ''||!user){
+                location.href= "/web/"
+            }else{
+                localStorage.setItem("user", JSON.stringify(user));
+            }
+        })
+
+    })
+}
+checkLogin();
 angular
     .module('userManagement', [
         'ngResource',
@@ -35,10 +31,7 @@ angular
         $routeProvider
             .when('/user', {
                 templateUrl: 'views/user/list.html',
-                controller: 'UsersController',
-                resolve: {
-                    loggedin: checkLoggedin
-                }
+                controller: 'UsersController'
             })
             .when('/user/new', {
                 templateUrl: 'views/user/new.html',
@@ -77,6 +70,19 @@ angular
                 controller: 'EmployeesNewController'
             })
             .otherwise({
-                redirectTo: '/user'
+                redirectTo: '/equipment'
             });
     });
+
+angular
+    .module('userManagement')
+    .controller('MainCtrl', ['$scope', function($scope, myService) {
+
+        $scope.currentUser = JSON.parse(localStorage.getItem("user"));
+        
+        $scope.logout = function(){
+            $.get("/web/logout").then(function(user){
+                location.href= "/web/"
+            })
+        }
+    }]);

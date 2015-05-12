@@ -5,11 +5,15 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">用户管理</a></li>
-                <li><a ng-href="#/customer"  ng-click="$location.path('/customer')">顾客管理</a></li>
-                <li><a ng-href="#/employee"  ng-click="$location.path('/employee')">雇员管理</a></li>
+                <li><a href="#/user" ng-click="$location.path('/user')" ng-show="{{currentUser.isAdmin}}">用户管理</a></li>
+                <li><a ng-href="#/customer"  ng-click="$location.path('/customer')" ng-show="{{currentUser.isAdmin}}">顾客管理</a></li>
+                <li><a ng-href="#/employee"  ng-click="$location.path('/employee')" ng-show="{{currentUser.isAdmin}}">雇员管理</a></li>
                 <li><a ng-href="#/equipment"  ng-click="$location.path('/equipment')">器材管理</a></li>
-                <li class="active"><a ng-href="#/account"  ng-click="$location.path('/account')">收支管理</a></li>
+                <li class="active"><a ng-href="#/account"  ng-click="$location.path('/account')" ng-show="{{currentUser.isAdmin}}">收支管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a>Hello, {{currentUser.name}} </a></li>
+                <li><a href="javascript:void(0);" ng-click="logout()">退出登录</a></li>
             </ul>
         </div>
     </div>
