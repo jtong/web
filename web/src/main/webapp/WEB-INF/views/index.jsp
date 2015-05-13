@@ -24,10 +24,13 @@
   <script src="js/angular/controller/employees_new_controller.js"></script>
   <script src="js/angular/controller/accounts_controller.js"></script>
   <script src="js/angular/controller/accounts_new_controller.js"></script>
+  <script src="js/angular/controller/accounts_edit_controller.js"></script>
   <script src="js/angular/controller/equipments_controller.js"></script>
   <script src="js/angular/controller/equipments_new_controller.js"></script>
+  <script src="js/angular/controller/equipments_edit_controller.js"></script>
   <script src="js/angular/controller/customers_controller.js"></script>
   <script src="js/angular/controller/customers_new_controller.js"></script>
+  <script src="js/angular/controller/customers_edit_controller.js"></script>
 
 </head>
 <body ng-controller="MainCtrl">

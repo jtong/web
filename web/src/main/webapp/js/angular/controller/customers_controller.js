@@ -18,7 +18,11 @@ angular.module('userManagement')
                 clear_customer_in_scope(customerId);
             });
         };
-
+        
+        $scope.update = function(customerId){
+            $location.path("/customer/edit/"+customerId );
+        };
+        
         $scope.delete_all_selected_customers = function(){
             var selected_customers = _.chain($scope.customers).where({selected:true}).pluck('id').value();
             $http.delete("/web/api/v1/customers/:batch", {

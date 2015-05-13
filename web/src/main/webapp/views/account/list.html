@@ -52,6 +52,7 @@
                 <td> {{account.price}} </td>
                 <td> {{account.paidTime}} </td>
                 <td>
+                    <button class="btn" ng-click="update(account.id)">修改 </button>
                     <button class="btn" ng-click="deleteUser(account.id)">删除 </button>
                 </td>
             </tr>

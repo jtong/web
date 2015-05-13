@@ -18,7 +18,11 @@ angular.module('userManagement')
                 clear_equipment_in_scope(equipmentId);
             });
         };
-
+        
+        $scope.update = function(employeeId){
+            $location.path("/equipment/edit/"+employeeId);
+        };
+        
         $scope.delete_all_selected_equipments = function(){
             var selected_equipments = _.chain($scope.equipments).where({selected:true}).pluck('id').value();
             $http.delete("/web/api/v1/equipments/:batch", {

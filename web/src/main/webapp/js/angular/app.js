@@ -45,6 +45,10 @@ angular
                 templateUrl: 'views/account/new.html',
                 controller: 'AccountsNewController'
             })
+            .when('/account/edit/:id', {
+                templateUrl: 'views/account/new.html',
+                controller: 'AccountsEditController'
+            })
             .when('/customer', {
                 templateUrl: 'views/customer/list.html',
                 controller: 'CustomersController'
@@ -52,6 +56,10 @@ angular
             .when('/customer/new', {
                 templateUrl: 'views/customer/new.html',
                 controller: 'CustomersNewController'
+            })
+            .when('/customer/edit/:id', {
+                templateUrl: 'views/customer/new.html',
+                controller: 'CustomersEditController'
             })
             .when('/equipment', {
                 templateUrl: 'views/equipment/list.html',

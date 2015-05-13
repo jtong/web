@@ -19,6 +19,10 @@ angular.module('userManagement')
             });
         };
 
+        $scope.update = function(accountId){
+            $location.path("/account/edit/"+accountId );
+        };
+        
         $scope.delete_all_selected_accounts = function(){
             var selected_accounts = _.chain($scope.accounts).where({selected:true}).pluck('id').value();
             $http.delete("/web/api/v1/accounts/:batch", {

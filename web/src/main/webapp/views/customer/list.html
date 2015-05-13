@@ -54,6 +54,7 @@
                 <td> {{customer.age}} </td>
                 <td> {{customer.grender}} </td>
                 <td>
+                    <button class="btn" ng-click="update(customer.id)">修改 </button>
                     <button class="btn" ng-click="deleteUser(customer.id)">删除 </button>
                 </td>
             </tr>
