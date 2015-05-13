@@ -61,6 +61,10 @@ angular
                 templateUrl: 'views/equipment/new.html',
                 controller: 'EquipmentsNewController'
             })
+            .when('/equipment/edit/:id', {
+                templateUrl: 'views/equipment/new.html',
+                controller: 'EquipmentsEditController'
+            })
             .when('/employee', {
                 templateUrl: 'views/employee/list.html',
                 controller: 'EmployeesController'
@@ -68,6 +72,10 @@ angular
             .when('/employee/new', {
                 templateUrl: 'views/employee/new.html',
                 controller: 'EmployeesNewController'
+            })
+            .when('/employee/edit/:id', {
+                templateUrl: 'views/employee/new.html',
+                controller: 'EmployeesEditController'
             })
             .otherwise({
                 redirectTo: '/equipment'

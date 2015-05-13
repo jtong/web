@@ -13,10 +13,14 @@ angular.module('userManagement')
         var Employee = $resource("/web/api/v1/employees/:employeeId");
         $scope.employees = Employee.query();
 
-        $scope.deleteEmployee = function(employeeId){
+        $scope.delete = function(employeeId){
             Employee.delete({employeeId:employeeId}, function(){
                 clear_employee_in_scope(employeeId);
             });
+        };
+
+        $scope.update = function(employeeId){
+            $location.path("/employee/edit/"+employeeId);
         };
 
         $scope.delete_all_selected_employees = function(){

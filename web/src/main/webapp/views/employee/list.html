@@ -53,8 +53,10 @@
                 <td> {{employee.phone}} </td>
                 <td> {{employee.age}} </td>
                 <td> {{employee.grender}} </td>
-                <td>
-                    <button class="btn" ng-click="deleteEmployee(employee.id)">删除 </button>
+                <td>                    
+                    <button class="btn" ng-click="update(employee.id)">修改 </button>
+
+                    <button class="btn" ng-click="delete(employee.id)">删除 </button>
                 </td>
             </tr>
         </tbody>

@@ -20,6 +20,7 @@
   <script src="js/angular/controller/users_controller.js"></script>
   <script src="js/angular/controller/users_new_controller.js"></script>
   <script src="js/angular/controller/employees_controller.js"></script>
+  <script src="js/angular/controller/employees_edit_controller.js"></script>
   <script src="js/angular/controller/employees_new_controller.js"></script>
   <script src="js/angular/controller/accounts_controller.js"></script>
   <script src="js/angular/controller/accounts_new_controller.js"></script>
@@ -27,7 +28,7 @@
   <script src="js/angular/controller/equipments_new_controller.js"></script>
   <script src="js/angular/controller/customers_controller.js"></script>
   <script src="js/angular/controller/customers_new_controller.js"></script>
-  
+
 </head>
 <body ng-controller="MainCtrl">
 
