@@ -33,7 +33,17 @@ public class Employee {
 
     @Column(name = "GRENDER")
     private boolean grender;
+    
+    @Column(name = "SEQ")
+    private String seq;
 
+    public String getSeq() {
+        return seq;
+    }
+
+    public void setSeq(String seq) {
+        this.seq = seq;
+    }
     public Employee() {
     }
 

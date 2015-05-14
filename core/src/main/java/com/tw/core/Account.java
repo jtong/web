@@ -24,6 +24,17 @@ public class Account {
     @Column(name = "PAID_TIME")
     private Date paidTime;
 
+    @Column(name = "TYPE")
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
     public double getPrice() {
         return price;
     }

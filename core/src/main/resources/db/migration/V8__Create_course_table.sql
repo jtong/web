@@ -1,6 +1,7 @@
-create table Equipment (
+create table Course (
     ID int not null AUTO_INCREMENT,
     NAME varchar(100) not null,
-    STATUS varchar(10) not null,
+    SEQ varchar(4) not null UNIQUE,
+    COACH varchar(100) not null,
     PRIMARY KEY (ID)
 );

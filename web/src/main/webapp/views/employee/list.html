@@ -42,6 +42,7 @@
             <th>电话</th>
             <th>年龄</th>
             <th>性别</th>
+            <th>编号</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -53,7 +54,8 @@
                 <td> {{employee.phone}} </td>
                 <td> {{employee.age}} </td>
                 <td> {{employee.grender}} </td>
-                <td>                    
+                <td> {{employee.seq}} </td>
+                <td>
                     <button class="btn" ng-click="update(employee.id)">修改 </button>
 
                     <button class="btn" ng-click="delete(employee.id)">删除 </button>

@@ -31,6 +31,9 @@
   <script src="js/angular/controller/customers_controller.js"></script>
   <script src="js/angular/controller/customers_new_controller.js"></script>
   <script src="js/angular/controller/customers_edit_controller.js"></script>
+  <script src="js/angular/controller/courses_controller.js"></script>
+  <script src="js/angular/controller/courses_new_controller.js"></script>
+  <script src="js/angular/controller/courses_edit_controller.js"></script>
 
 </head>
 <body ng-controller="MainCtrl">

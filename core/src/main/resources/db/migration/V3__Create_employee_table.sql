@@ -4,5 +4,6 @@ create table Employee (
     PHONE varchar(100) not null,
     AGE int not null,
     GRENDER boolean not null,
+    SEQ varchar(8) not null UNIQUE,
     PRIMARY KEY (ID)
 );

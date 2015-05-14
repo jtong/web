@@ -49,6 +49,18 @@ angular
                 templateUrl: 'views/account/new.html',
                 controller: 'AccountsEditController'
             })
+            .when('/course', {
+                templateUrl: 'views/course/list.html',
+                controller: 'CoursesController'
+            })
+            .when('/course/new', {
+                templateUrl: 'views/course/new.html',
+                controller: 'CoursesNewController'
+            })
+            .when('/course/edit/:id', {
+                templateUrl: 'views/course/new.html',
+                controller: 'CoursesEditController'
+            })
             .when('/customer', {
                 templateUrl: 'views/customer/list.html',
                 controller: 'CustomersController'
