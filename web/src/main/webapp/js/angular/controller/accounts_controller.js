@@ -1,5 +1,32 @@
 'use strict';
+function translate_account_to_period_data(accounts,type) {
+    var input_grouped_object = _.chain(accounts).filter(function (account) {
+        return account.type == type
+    }).groupBy(function (account) {
+        return new Date(account.paidTime).getMonth()
+    });
+    var input_grouped_object_value = input_grouped_object.value();
+    if (input_grouped_object.keys().value().length < 12) {
+        var count = 0;
+        while (count < 12) {
+            if (!input_grouped_object_value[count]) {
+                input_grouped_object_value[count] = [{price: 0}]
+            }
+            count++;
+        }
+    }
 
+    return _.chain(input_grouped_object_value).pairs()
+        .sort(function (item) {
+            return item[0];
+
+        }).map(function (item) {
+            return _(item[1]).reduce(function (memo, account) {
+                return memo + account.price;
+            }, 0)
+
+        }).value()
+}
 /**
  * @ngdoc function
  * @name partyBidApp.controller:MainCtrl
@@ -57,5 +84,11 @@ angular.module('userManagement')
         $scope.go_to_create_account = function(){
             $location.path("/account/new");
         }
+            //console.log($scope.accounts);
+
+        $scope.analyse = function(){
+            $location.path("/account/analyse");
+        }
 
     });
+

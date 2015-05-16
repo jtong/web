@@ -1,0 +1,29 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand"  href="javascript:void(0)">管理界面</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ng-href="#/user" ng-click="$location.path('/user')" ng-show="{{currentUser.isAdmin}}">用户管理</a></li>
+                <li><a ng-href="#/customer" ng-click="$location.path('/customer')">顾客管理</a></li>
+                <li><a ng-href="#/employee" ng-click="$location.path('/employee')" ng-show="{{currentUser.isAdmin}}">雇员管理</a></li>
+                <li><a ng-href="#/equipment" ng-click="$location.path('/equipment')">器材管理</a></li>
+                <li class="active"><a ng-href="#/account" ng-click="$location.path('/account')">收支管理</a></li>
+                <li><a ng-href="#/course" ng-click="$location.path('/course')">课程管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a>Hello, {{currentUser.name}} </a></li>
+                <li><a href="javascript:void(0);" ng-click="logout()">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+</div>
+
+<div class="container">
+
+    <canvas id="accountChart" width="640" height="480"></canvas>
+</div>

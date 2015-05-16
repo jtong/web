@@ -49,6 +49,10 @@ angular
                 templateUrl: 'views/account/new.html',
                 controller: 'AccountsEditController'
             })
+            .when('/account/analyse', {
+                templateUrl: 'views/account/analyse.html',
+                controller: 'AccountsAnalyseController'
+            })
             .when('/course', {
                 templateUrl: 'views/course/list.html',
                 controller: 'CoursesController'
