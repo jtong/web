@@ -48,5 +48,8 @@ insert into ACCOUNT ( NAME, PRICE, PAID_TIME, TYPE ) values ('income 13', 4000.0
 
 insert into USER ( NAME, PASSWORD, EMAIL, AGE, IS_ADMIN ) values ('admin', 'd41d8cd98f00b204e9800998ecf8427e','admin@abc.com', 21, true);
 
-insert into Course ( NAME, SEQ, COACH ) values ('training 1', '1234', 'Adam');
+insert into Course ( NAME, SEQ, COACH ) values ('瑜伽', '1234', 'Adam');
+insert into Course ( NAME, SEQ, COACH ) values ('动感单车', '1235', 'Adam');
+insert into Course ( NAME, SEQ, COACH ) values ('健身操', '1236', 'Adam');
+insert into Course ( NAME, SEQ, COACH ) values ('普拉提', '1237', 'Adam');
 

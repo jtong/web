@@ -58,4 +58,9 @@ public class UserService {
         return userDAO.auth(userName, passwordService.encrypt(password));
     }
 
+    @Transactional
+    public List<User> search(String keyword) {
+        return userDAO.search(keyword);
+    }
+
 }

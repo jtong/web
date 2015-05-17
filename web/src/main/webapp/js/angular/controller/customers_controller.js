@@ -13,7 +13,7 @@ angular.module('userManagement')
         var Customer = $resource("/web/api/v1/customers/:customerId");
         $scope.customers = Customer.query();
 
-        $scope.deleteCustomer = function(customerId){
+        $scope.delete = function(customerId){
             Customer.delete({customerId:customerId}, function(){
                 clear_customer_in_scope(customerId);
             });
@@ -58,4 +58,14 @@ angular.module('userManagement')
             $location.path("/customer/new");
         }
 
+        $scope.query_string = "";
+
+        $scope.search = function(){
+            $http.get("/web/api/v1/customers/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.customers = data;
+            })
+
+        }
+        
     });

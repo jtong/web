@@ -66,7 +66,7 @@ public class AccountsController {
         accountService.deleteAll(ids);
     }
 
-    @RequestMapping(value = "/:search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public List<Account> search( @RequestParam(value = "keyword") String keyword) {
         return accountService.search(keyword);
     }

@@ -85,7 +85,7 @@ public class CourseDAO {
     }
 
     public List<Course> search(String keyword) {
-        String query = "FROM Course WHERE name LIKE :keyword or email LIKE :keyword";
+        String query = "FROM Course WHERE name LIKE :keyword";
 
         return sessionFactory.getCurrentSession().createQuery(query)
                 .setString("keyword", "%" + keyword + "%")

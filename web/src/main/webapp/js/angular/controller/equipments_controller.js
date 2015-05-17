@@ -13,7 +13,7 @@ angular.module('userManagement')
         var Equipment = $resource("/web/api/v1/equipments/:equipmentId");
         $scope.equipments = Equipment.query();
 
-        $scope.deleteEquipment = function(equipmentId){
+        $scope.delete = function(equipmentId){
             Equipment.delete({equipmentId:equipmentId}, function(){
                 clear_equipment_in_scope(equipmentId);
             });
@@ -56,6 +56,16 @@ angular.module('userManagement')
 
         $scope.go_to_create_equipment = function(){
             $location.path("/equipment/new");
+        }
+
+        $scope.query_string = "";
+
+        $scope.search = function(){
+            $http.get("/web/api/v1/equipments/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.equipments = data;
+            })
+
         }
 
     });

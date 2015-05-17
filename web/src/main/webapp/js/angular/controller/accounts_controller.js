@@ -40,7 +40,7 @@ angular.module('userManagement')
         var Account = $resource("/web/api/v1/accounts/:accountId");
         $scope.accounts = Account.query();
 
-        $scope.deleteAccount = function(accountId){
+        $scope.delete = function(accountId){
             Account.delete({accountId:accountId}, function(){
                 clear_account_in_scope(accountId);
             });
@@ -89,6 +89,15 @@ angular.module('userManagement')
         $scope.analyse = function(){
             $location.path("/account/analyse");
         }
+        
+        $scope.query_string = "";
 
+        $scope.search = function(){
+            $http.get("/web/api/v1/accounts/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.accounts = data;
+            })
+
+        }
     });
 

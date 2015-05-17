@@ -66,7 +66,7 @@ public class EquipmentsController {
         equipmentService.deleteAll(ids);
     }
 
-    @RequestMapping(value = "/:search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public List<Equipment> search( @RequestParam(value = "keyword") String keyword) {
         return equipmentService.search(keyword);
     }

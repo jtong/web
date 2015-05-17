@@ -55,5 +55,14 @@ angular.module('userManagement')
         }
         
 
+        $scope.query_string = "";
+        
+        $scope.search = function(){
+            $http.get("/web/api/v1/users/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.users = data;
+            })
+            
+        }
 
     });

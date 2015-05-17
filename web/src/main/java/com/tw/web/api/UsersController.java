@@ -74,7 +74,7 @@ public class UsersController {
         usersService.deleteAll(ids);
     }
 
-    @RequestMapping(value = "/:search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public List<User> search( @RequestParam(value = "keyword") String keyword) {
         return usersService.search(keyword);
     }

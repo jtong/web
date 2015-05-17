@@ -25,9 +25,9 @@
         <button type="button" class="btn btn-default btn "  ng-click="delete_all_selected_employees()">批量删除</button>
     </div>
     <div class="form-group input-group ">
-        <input type="search" class="form-control" />
+        <input type="text" class="form-control" ng-model="query_string" />
         <span class="input-group-btn ">
-            <button class="btn btn-default" type="button" >Search</button>
+            <button class="btn btn-default" type="button" ng-click="search()" >Search</button>
         </span>
     </div>
 </div>

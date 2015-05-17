@@ -58,4 +58,13 @@ angular.module('userManagement')
             $location.path("/employee/new");
         }
 
+        $scope.query_string = "";
+
+        $scope.search = function(){
+            $http.get("/web/api/v1/employees/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.employees = data;
+            })
+
+        }
     });

@@ -84,7 +84,7 @@ public class EquipmentDAO {
     }
 
     public List<Equipment> search(String keyword) {
-        String query = "FROM Equipment WHERE name LIKE :keyword or email LIKE :keyword";
+        String query = "FROM Equipment WHERE name LIKE :keyword";
 
         return sessionFactory.getCurrentSession().createQuery(query)
                 .setString("keyword", "%" + keyword + "%")

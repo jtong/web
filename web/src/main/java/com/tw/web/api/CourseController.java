@@ -66,7 +66,7 @@ public class CourseController {
         courseService.deleteAll(ids);
     }
 
-    @RequestMapping(value = "/:search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public List<Course> search( @RequestParam(value = "keyword") String keyword) {
         return courseService.search(keyword);
     }

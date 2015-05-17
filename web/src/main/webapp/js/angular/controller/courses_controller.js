@@ -11,9 +11,10 @@ angular.module('userManagement')
     .controller('CoursesController', function ($scope, $location, $resource,$http) {
 
         var Course = $resource("/web/api/v1/courses/:courseId");
+        var Search = $
         $scope.courses = Course.query();
 
-        $scope.deleteCourse = function(courseId){
+        $scope.delete = function(courseId){
             Course.delete({courseId:courseId}, function(){
                 clear_course_in_scope(courseId);
             });
@@ -58,4 +59,13 @@ angular.module('userManagement')
             $location.path("/course/new");
         }
 
+        $scope.query_string = "";
+
+        $scope.search = function(){
+            $http.get("/web/api/v1/courses/search",{ params: {keyword: $scope.query_string}}).success(function(data){
+
+                $scope.courses = data;
+            })
+
+        }
     });

@@ -66,7 +66,7 @@ public class EmployeesController {
         employeeService.deleteAll(ids);
     }
 
-    @RequestMapping(value = "/:search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public List<Employee> search( @RequestParam(value = "keyword") String keyword) {
         return employeeService.search(keyword);
     }
