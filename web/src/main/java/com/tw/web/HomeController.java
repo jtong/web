@@ -39,7 +39,13 @@ public class HomeController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public ModelAndView login(HttpSession session, @RequestParam(value = "user_name") String userName, @RequestParam(value = "password") String password) {
         User current = this.userService.auth(userName, password);
-        return (current != null) ? login(session, current) : new ModelAndView("redirect:/");
+        return (current != null) ? login(session, current) : loginFailed();
+    }
+
+    private ModelAndView loginFailed() {
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        modelAndView.addObject("message","用户名或密码错误");
+        return modelAndView;
     }
 
 

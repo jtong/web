@@ -23,6 +23,12 @@
         <div>
             <h2>管理员登录</h2>
         </div>
+        <% String message = (String) request.getParameter("message"); %>
+
+
+        <%if(message != null){%>
+        <div class="alert alert-danger" role="alert"><%=message%></div>
+        <%}%>
         <div class="row">
             <div class="col-md-4">
                     <div class="form-group">
@@ -41,6 +47,7 @@
                 <button type="submit" class="btn btn-default">登录</button>
             </div>
         </div>
+        <img src="/web/img/1.png" />
     </form>
 </div>
 
