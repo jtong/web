@@ -48,8 +48,8 @@ insert into ACCOUNT ( NAME, PRICE, PAID_TIME, TYPE ) values ('income 13', 4000.0
 
 insert into USER ( NAME, PASSWORD, EMAIL, AGE, IS_ADMIN ) values ('admin', 'd41d8cd98f00b204e9800998ecf8427e','admin@abc.com', 21, true);
 
-insert into Course ( NAME, SEQ, COACH ) values ('瑜伽', '1234', 'Adam');
-insert into Course ( NAME, SEQ, COACH ) values ('动感单车', '1235', 'Adam');
-insert into Course ( NAME, SEQ, COACH ) values ('健身操', '1236', 'Adam');
-insert into Course ( NAME, SEQ, COACH ) values ('普拉提', '1237', 'Adam');
+insert into Course ( NAME, SEQ, COACH, DURING ) values ('瑜伽', '1234', 'Adam', '2012-2-29 16:00, 2012-3-1 16:00, 2012-3-2 16:00, 2012-3-3 16:00');
+insert into Course ( NAME, SEQ, COACH, DURING ) values ('动感单车', '1235', 'Adam', '2012-2-26 16:00, 2012-2-27 16:00, 2012-2-28 16:00, 2012-2-29 16:00');
+insert into Course ( NAME, SEQ, COACH, DURING ) values ('健身操', '1236', 'Adam', '2012-2-22 16:00, 2012-2-23 16:00, 2012-2-24 16:00, 2012-2-25 16:00');
+insert into Course ( NAME, SEQ, COACH, DURING ) values ('普拉提', '1237', 'Adam', '2012-2-18 16:00, 2012-2-19 16:00, 2012-2-20 16:00, 2012-2-21 16:00');
 

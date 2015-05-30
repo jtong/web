@@ -33,6 +33,10 @@
             <label>教练</label>
             <input type="text" class="form-control" placeholder="教练" ng-model="course.coach">
         </div>
+        <div class="form-group">
+            <label>上课时间（yyyy-mm-dd HH:MM 用逗号分开）</label>
+            <input type="text" class="form-control" placeholder="上课时间" ng-model="course.during">
+        </div>
         <button type="submit" class="btn btn-default" ng-click="do_submit()">Submit</button>
     </form>
 </div>

@@ -68,4 +68,9 @@ angular.module('userManagement')
             })
 
         }
+        
+        $scope.show_calendar = function(){
+            location.href="/web/calendar.html"
+
+        }
     });
