@@ -1,6 +1,7 @@
 package com.tw.core;
 
 import javax.persistence.*;
+import java.lang.String;
 
 /**
  * Created by twer on 7/16/14.
@@ -22,6 +23,17 @@ public class Course {
     @Column(name = "COACH")
     private String coach;
 
+    public String getDuring() {
+        return during;
+    }
+
+    public void setDuring(String during) {
+        this.during = during;
+    }
+
+    @Column(name = "DURING")
+    private String during;
+    
     public String getCoach() {
         return coach;
     }
