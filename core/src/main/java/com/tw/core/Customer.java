@@ -2,6 +2,7 @@ package com.tw.core;
 
 import javax.persistence.*;
 import java.lang.String;
+import java.sql.Date;
 
 /**
  * Created by twer on 7/16/14.
@@ -39,7 +40,18 @@ public class Customer {
 
     @Column(name = "COACH")
     private String coach;
-    
+
+    public Date getExpire() {
+        return expire;
+    }
+
+    public void setExpire(Date expire) {
+        this.expire = expire;
+    }
+
+    @Column(name = "EXPIRE")
+    private Date expire;
+
     public String getSeq() {
         return seq;
     }

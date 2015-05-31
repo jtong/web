@@ -44,6 +44,8 @@
             <th>年龄</th>
             <th>性别</th>
             <th>编号</th>
+            <th>到期日期</th>
+            <th>教练</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -56,6 +58,8 @@
                 <td> {{customer.age}} </td>
                 <td> {{customer.grender}} </td>
                 <td> {{customer.seq}} </td>
+                <td> {{customer.expire}} </td>
+                <td> {{customer.coach}} </td>
                 <td>
                     <button class="btn" ng-click="update(customer.id)">修改 </button>
                     <button class="btn" ng-click="delete(customer.id)">删除 </button>

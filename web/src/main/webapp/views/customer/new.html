@@ -42,6 +42,14 @@
             <label>编号</label>
             <input type="text" class="form-control" placeholder="输入编号" ng-model="customer.seq">
         </div>
+        <div class="form-group">
+            <label>到期日期</label>
+            <input type="text" class="form-control" placeholder="输入到期日期" ng-model="customer.expire">
+        </div>
+        <div class="form-group">
+            <label>教练</label>
+            <input type="text" class="form-control" placeholder="输入教练" ng-model="customer.coach">
+        </div>
         <button type="submit" class="btn btn-default" ng-click="do_submit()">Submit</button>
     </form>
 </div>
